@@ -1,4 +1,4 @@
-package pl.kk.quizmon;
+package pl.kk.quizmon.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

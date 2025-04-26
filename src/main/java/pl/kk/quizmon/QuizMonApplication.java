@@ -4,15 +4,21 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.kk.quizmon.utils.ConfigLoader;
 
 import java.io.IOException;
 
 public class QuizMonApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(QuizMonApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("QuizMon - Kacper Kozłowski WCY22IJ3S1");
+        ConfigLoader config = ConfigLoader.getInstance();
+        int width = Integer.parseInt(config.getProperty("app.width"));
+        int height = Integer.parseInt(config.getProperty("app.height"));
+        String title = config.getProperty("app.title");
+
+        FXMLLoader fxmlLoader = new FXMLLoader(QuizMonApplication.class.getResource("views/mainmenu-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
+        stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
     }

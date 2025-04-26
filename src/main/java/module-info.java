@@ -3,7 +3,10 @@ module pl.kk.quizmon {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires java.logging;
 
     opens pl.kk.quizmon to javafx.fxml;
     exports pl.kk.quizmon;
+    exports pl.kk.quizmon.controllers;
+    opens pl.kk.quizmon.controllers to javafx.fxml;
 }
