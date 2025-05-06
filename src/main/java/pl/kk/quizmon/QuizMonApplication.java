@@ -22,6 +22,7 @@ public class QuizMonApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(QuizMonApplication.class.getResource("views/mainmenu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), width, height);
+        scene.getStylesheets().add(QuizMonApplication.class.getResource("styles/base.css").toExternalForm());
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();

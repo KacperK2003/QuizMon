@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Audiowide";
+    src: url("../fonts/Audiowide/Audiowide-Regular.ttf");
+}
+
+* {
+    -fx-font-family: "Audiowide";
+    -fx-font-size: 24px;
+}
