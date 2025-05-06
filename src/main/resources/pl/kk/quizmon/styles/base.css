@@ -3,7 +3,13 @@
     src: url("../fonts/Audiowide/Audiowide-Regular.ttf");
 }
 
+.root {
+    -fx-background-color: linear-gradient(to bottom, #54C7F9, #34495e);
+    -fx-spacing: 30;
+}
+
 * {
     -fx-font-family: "Audiowide";
-    -fx-font-size: 24px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
 }

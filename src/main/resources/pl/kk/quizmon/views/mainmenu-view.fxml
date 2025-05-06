@@ -3,13 +3,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label text="QuizMon" />
-      <Button mnemonicParsing="false" text="Quiz" />
-      <Button mnemonicParsing="false" text="Pokedex" />
-      <Button mnemonicParsing="false" text="Ulubione" />
-      <Button mnemonicParsing="false" text="O programie" />
-   </children>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.kk.quizmon.controllers.MainMenuController">
+   <Label prefHeight="23.0" prefWidth="49.0" styleClass="title-label" text="QuizMon">
+      <VBox.margin>
+         <Insets top="10" bottom="70" />
+      </VBox.margin>
+   </Label>
+   <Button mnemonicParsing="false" text="Quiz" />
+   <Button mnemonicParsing="false" text="Pokedex" />
+   <Button mnemonicParsing="false" text="Ulubione" />
+   <Button mnemonicParsing="false" text="O programie" onAction="#onAboutButtonClick" />
 </VBox>

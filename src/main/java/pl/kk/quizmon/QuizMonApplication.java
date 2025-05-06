@@ -9,6 +9,7 @@ import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class QuizMonApplication extends Application {
@@ -22,9 +23,13 @@ public class QuizMonApplication extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(QuizMonApplication.class.getResource("views/mainmenu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), width, height);
-        scene.getStylesheets().add(QuizMonApplication.class.getResource("styles/base.css").toExternalForm());
+        scene.getStylesheets().addAll(
+                Objects.requireNonNull(QuizMonApplication.class.getResource("styles/base.css")).toExternalForm(),
+                Objects.requireNonNull(QuizMonApplication.class.getResource("styles/mainview.css")).toExternalForm()
+        );
         stage.setTitle(title);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

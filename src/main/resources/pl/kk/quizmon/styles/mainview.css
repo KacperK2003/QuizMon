@@ -1,0 +1,19 @@
+.title-label {
+    -fx-font-size: 64px;
+    -fx-font-weight: bold;
+    -fx-max-width: Infinity
+}
+
+.button {
+    -fx-font-size: 32px;
+    -fx-max-width: 300;
+    -fx-background-color: #454545;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+}
+
+.button:hover {
+    -fx-background-color: #606060;
+}
