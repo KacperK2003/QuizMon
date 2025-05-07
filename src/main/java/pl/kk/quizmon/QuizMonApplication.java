@@ -1,6 +1,7 @@
 package pl.kk.quizmon;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,23 +18,25 @@ public class QuizMonApplication extends Application {
     public void start(Stage stage) throws IOException {
         Configuration config = prepareConfig();
 
+        if (config == null) {
+            Logger.getGlobal().severe("Failed to load configuration file!");
+            Platform.exit();
+            return;
+        }
+
         int width = config.getInt("app.width");
         int height = config.getInt("app.height");
         String title = config.getString("app.title");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(QuizMonApplication.class.getResource("views/mainmenu-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), width, height);
-        scene.getStylesheets().addAll(
-                Objects.requireNonNull(QuizMonApplication.class.getResource("styles/base.css")).toExternalForm(),
-                Objects.requireNonNull(QuizMonApplication.class.getResource("styles/mainview.css")).toExternalForm()
-        );
+        Scene scene = prepareMainMenuScene(width, height);
+
         stage.setTitle(title);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
     }
 
-    public Configuration prepareConfig() {
+    private Configuration prepareConfig() {
         Configurations configurations = new Configurations();
         try {
             return configurations.properties("pl/kk/quizmon/config.properties");
@@ -41,6 +44,17 @@ public class QuizMonApplication extends Application {
             Logger.getGlobal().severe(e.getMessage());
             return null;
         }
+    }
+
+    private Scene prepareMainMenuScene(int width, int height) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("views/mainmenu-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
+        scene.getStylesheets().addAll(
+                Objects.requireNonNull(getClass().getResource("styles/base.css")).toExternalForm(),
+                Objects.requireNonNull(getClass().getResource("styles/mainview.css")).toExternalForm()
+        );
+
+        return scene;
     }
 
     public static void main(String[] args) {
