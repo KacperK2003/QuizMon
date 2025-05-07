@@ -5,8 +5,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.kk.quizmon.controllers.MainMenuController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" styleClass="root"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.kk.quizmon.controllers.MainMenuController"
+      stylesheets="@../styles/base.css, @../styles/mainmenu.css">
    <Label prefHeight="23.0" prefWidth="49.0" styleClass="title-label" text="QuizMon">
       <VBox.margin>
          <Insets top="10" bottom="70" />

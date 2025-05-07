@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import pl.kk.quizmon.utils.ViewManager;
 
 import java.io.IOException;
-import java.util.Objects;
 import java.util.logging.Logger;
 
 public class QuizMonApplication extends Application {
@@ -30,6 +30,8 @@ public class QuizMonApplication extends Application {
 
         Scene scene = prepareMainMenuScene(width, height);
 
+        ViewManager.getInstance().setScene(scene);
+
         stage.setTitle(title);
         stage.setScene(scene);
         stage.setResizable(false);
@@ -47,14 +49,10 @@ public class QuizMonApplication extends Application {
     }
 
     private Scene prepareMainMenuScene(int width, int height) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("views/mainmenu-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), width, height);
-        scene.getStylesheets().addAll(
-                Objects.requireNonNull(getClass().getResource("styles/base.css")).toExternalForm(),
-                Objects.requireNonNull(getClass().getResource("styles/mainview.css")).toExternalForm()
-        );
-
-        return scene;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
+                ViewManager.View.MainMenu.getFileName()
+        ));
+        return new Scene(fxmlLoader.load(), width, height);
     }
 
     public static void main(String[] args) {
