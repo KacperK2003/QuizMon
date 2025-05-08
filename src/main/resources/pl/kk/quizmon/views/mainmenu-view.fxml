@@ -6,7 +6,7 @@
 <?import javafx.geometry.Insets?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="400.0" prefWidth="600.0" styleClass="root"
+      prefHeight="720.0" prefWidth="1280.0" styleClass="root"
       xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
       fx:controller="pl.kk.quizmon.controllers.MainMenuController"
       stylesheets="@../styles/base.css, @../styles/mainmenu.css">
