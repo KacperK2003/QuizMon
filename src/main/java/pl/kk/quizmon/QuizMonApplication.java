@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
-import pl.kk.quizmon.utils.ViewManager;
+import pl.kk.quizmon.services.ViewManager;
 
 import java.io.IOException;
 import java.util.logging.Logger;

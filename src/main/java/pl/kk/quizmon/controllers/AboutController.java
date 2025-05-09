@@ -2,7 +2,7 @@ package pl.kk.quizmon.controllers;
 
 import javafx.fxml.FXML;
 import pl.kk.quizmon.QuizMonApplication;
-import pl.kk.quizmon.utils.ViewManager;
+import pl.kk.quizmon.services.ViewManager;
 
 import java.awt.*;
 import java.io.File;
