@@ -1,0 +1,36 @@
+.text-area {
+    -fx-background-color: transparent;
+    -fx-font-family: "Audiowide";
+    -fx-font-size: 20px;
+    -fx-border-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-cursor: default;
+    -fx-border-color: transparent;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+.button {
+    -fx-font-size: 32px;
+    -fx-max-width: 450;
+    -fx-background-color: #454545;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+    -fx-border-color: black;
+    -fx-border-size: 5;
+}
+
+.button:hover {
+    -fx-background-color: #606060;
+}

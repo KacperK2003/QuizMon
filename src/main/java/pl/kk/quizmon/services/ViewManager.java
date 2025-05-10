@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public final class ViewManager {
     private static ViewManager instance = null;
     private Scene scene = null;
-    private Map<View, Parent> cachedViews;
+    private final Map<View, Parent> cachedViews;
 
     private ViewManager() {
         cachedViews = new HashMap<>();
@@ -22,6 +22,7 @@ public final class ViewManager {
 
     public enum View {
         MainMenu("views/mainmenu-view.fxml"),
+        Pokedex("views/pokedex-view.fxml"),
         About("views/about-view.fxml");
 
         private final String fileName;

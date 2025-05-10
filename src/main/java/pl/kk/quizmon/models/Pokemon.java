@@ -1,19 +1,30 @@
 package pl.kk.quizmon.models;
 
-public class Pokemon {
-    private int number;
-    private String name;
+import javafx.scene.image.Image;
 
-    public Pokemon(int number, String name) {
-        this.number = number;
+public class Pokemon {
+    private final int id;
+    private final String name;
+    private Image sprite;
+
+    public Pokemon(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public int getNumber() {
-        return number;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public Image getSprite() {
+        return sprite;
+    }
+
+    public void setSprite(Image sprite) {
+        this.sprite = sprite;
     }
 }
