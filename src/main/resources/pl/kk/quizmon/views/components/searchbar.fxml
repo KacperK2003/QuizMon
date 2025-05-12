@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="10.0"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.kk.quizmon.controllers.components.SearchBarController"
+      stylesheets="@../../styles/components/searchbar.css">
+    <TextField fx:id="searchField" styleClass="search-bar" promptText="Wyszukaj Pokémona..." HBox.hgrow="ALWAYS"/>
+    <Button text="Szukaj" onAction="#onSearchClicked"/>
+</HBox>
