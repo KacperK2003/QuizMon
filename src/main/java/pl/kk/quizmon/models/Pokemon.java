@@ -6,6 +6,7 @@ public class Pokemon {
     private final int id;
     private final String name;
     private Image sprite;
+    private Image icon;
 
     public Pokemon(int id, String name) {
         this.id = id;
@@ -24,7 +25,15 @@ public class Pokemon {
         return sprite;
     }
 
+    public Image getIcon() {
+        return icon;
+    }
+
     public void setSprite(Image sprite) {
         this.sprite = sprite;
+    }
+
+    public void setIcon(Image icon) {
+        this.icon = icon;
     }
 }

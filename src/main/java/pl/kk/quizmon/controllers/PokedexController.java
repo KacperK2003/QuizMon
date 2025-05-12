@@ -1,30 +1,50 @@
 package pl.kk.quizmon.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.ImageView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import pl.kk.quizmon.QuizMonApplication;
+import pl.kk.quizmon.controllers.components.PokedexListElementController;
+import pl.kk.quizmon.controllers.components.PokemonViewerController;
+import pl.kk.quizmon.controllers.components.SearchBarController;
 import pl.kk.quizmon.models.Pokemon;
 import pl.kk.quizmon.services.PokeApiService;
 import pl.kk.quizmon.services.ViewManager;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.logging.Logger;
 
 public class PokedexController {
     @FXML
-    private TextArea pokemonName;
+    private VBox root;
 
     @FXML
-    private ImageView pokemonSprite;
+    private HBox mainHBox;
 
     @FXML
     public void initialize() {
-        PokeApiService pokeApiService = new PokeApiService();
+        FXMLLoader loaderPokemonViewer = new FXMLLoader(QuizMonApplication.class.getResource("views/components/pokemon-viewer.fxml"));
+        FXMLLoader loaderPokedexListElement = new FXMLLoader(QuizMonApplication.class.getResource("views/components/pokedex-list-element.fxml"));
+        FXMLLoader loaderSearchBar = new FXMLLoader(QuizMonApplication.class.getResource("views/components/searchbar.fxml"));
+
+        PokeApiService pokeApiService = PokeApiService.getInstance();
         try {
-            Pokemon pokemon = pokeApiService.getPokemonData();
-            pokemonName.setText(pokemon.getName());
-            pokemonSprite.setImage(pokemon.getSprite());
-            pokemonSprite.autosize();
-        } catch (Exception e) {
+            Pokemon pokemon = pokeApiService.getPokemonData(212);
+            Node viewer = loaderPokemonViewer.load();
+            PokemonViewerController pokemonViewerController = loaderPokemonViewer.getController();
+            pokemonViewerController.setData(pokemon);
+            mainHBox.getChildren().add(viewer);
+            Node element = loaderPokedexListElement.load();
+            PokedexListElementController pokedexListElementController = loaderPokedexListElement.getController();
+            pokedexListElementController.setData(pokemon);
+            mainHBox.getChildren().add(element);
+            Node searchBar = loaderSearchBar.load();
+            SearchBarController searchBarController = loaderSearchBar.getController();
+            root.getChildren().add(searchBar);
+        } catch (IOException | URISyntaxException e) {
             Logger.getGlobal().severe(e.getMessage());
         }
     }

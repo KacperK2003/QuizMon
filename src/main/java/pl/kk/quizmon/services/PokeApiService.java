@@ -15,27 +15,50 @@ import java.net.URL;
 import java.util.logging.Logger;
 
 public class PokeApiService {
-    private static final String urlName = "https://pokeapi.co/api/v2/pokemon/scizor"; //Test with scizor
-    private static final String urlSpriteName = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png";
+    private static final String urlName = "https://pokeapi.co/api/v2/pokemon/";
+    private static final String urlSpriteName = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+    private static final String urlIconName = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/";
 
-    public PokeApiService() {}
+    private static PokeApiService instance;
+
+    private PokeApiService() {}
 
     private record PokemonApiResponse(int id, String name) { }
 
-    public Pokemon getPokemonData() throws URISyntaxException, IOException {
-        String jsonData = downloadJsonData();
+    public Pokemon getPokemonData(String name) throws URISyntaxException, IOException {
+        name = name.toLowerCase();
+        String jsonData = downloadJsonData(name);
         Gson gson = new Gson();
-        //Pokemon pokemon = gson.fromJson(jsonData, Pokemon.class); // Tu się pierdoli, pewnie bo jest obrazek a json nie ma obrazka.
         PokemonApiResponse apiResponse = gson.fromJson(jsonData, PokemonApiResponse.class);
 
         Pokemon pokemon = new Pokemon(apiResponse.id(), apiResponse.name());
-        pokemon.setSprite(downloadImageData());
+        pokemon.setSprite(downloadImageData(urlSpriteName + pokemon.getId() + ".png"));
+        pokemon.setIcon(downloadImageData(urlIconName + pokemon.getId() + ".png"));
 
         return pokemon;
     }
 
-    private String downloadJsonData() throws URISyntaxException, IOException {
-        URL url = new URI(urlName).toURL();
+    public Pokemon getPokemonData(int id) throws URISyntaxException, IOException {
+        String jsonData = downloadJsonData(Integer.toString(id));
+        Gson gson = new Gson();
+        PokemonApiResponse apiResponse = gson.fromJson(jsonData, PokemonApiResponse.class);
+
+        Pokemon pokemon = new Pokemon(apiResponse.id(), apiResponse.name());
+        pokemon.setSprite(downloadImageData(urlSpriteName + pokemon.getId() + ".png"));
+        pokemon.setIcon(downloadImageData(urlIconName + pokemon.getId() + ".png"));
+
+        return pokemon;
+    }
+
+    public static PokeApiService getInstance() {
+        if (instance == null)
+            instance = new PokeApiService();
+
+        return instance;
+    }
+
+    private String downloadJsonData(String name) throws URISyntaxException, IOException {
+        URL url = new URI(urlName + name).toURL();
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 
@@ -53,11 +76,12 @@ public class PokeApiService {
         return content.toString();
     }
 
-    private Image downloadImageData() throws URISyntaxException, IOException {
-        Image image = new Image(urlSpriteName, true);
+    private Image downloadImageData(String url) {
+        Image image = new Image(url, true);
 
         if (image.isError()) {
-            System.out.println("Błąd ładowania obrazu: " + image.getException());
+            Logger.getGlobal().severe("Failed to download sprite!");
+            Logger.getGlobal().severe(image.getException().getMessage());
         }
 
         return image;

@@ -13,7 +13,7 @@
     -fx-border-radius: 20;
     -fx-padding: 8 16;
     -fx-border-color: black;
-    -fx-border-size: 5;
+    -fx-border-width: 5px;
 }
 
 .button:hover {
