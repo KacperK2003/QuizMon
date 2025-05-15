@@ -2,7 +2,7 @@ package pl.kk.quizmon.controllers;
 
 import javafx.fxml.FXML;
 
-import pl.kk.quizmon.services.ViewManager;
+import pl.kk.quizmon.infrastructure.ViewManager;
 
 public class MainMenuController {
     @FXML

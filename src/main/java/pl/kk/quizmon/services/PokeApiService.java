@@ -38,18 +38,6 @@ public class PokeApiService {
         return pokemon;
     }
 
-    public Pokemon getPokemonData(int id) throws URISyntaxException, IOException {
-        String jsonData = downloadJsonData(Integer.toString(id));
-        Gson gson = new Gson();
-        PokemonApiResponse apiResponse = gson.fromJson(jsonData, PokemonApiResponse.class);
-
-        Pokemon pokemon = new Pokemon(apiResponse.id(), apiResponse.name());
-        pokemon.setSprite(downloadImageData(urlSpriteName + pokemon.getId() + ".png"));
-        pokemon.setIcon(downloadImageData(urlIconName + pokemon.getId() + ".png"));
-
-        return pokemon;
-    }
-
     public static PokeApiService getInstance() {
         if (instance == null)
             instance = new PokeApiService();

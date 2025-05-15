@@ -7,6 +7,7 @@ public class Pokemon {
     private final String name;
     private Image sprite;
     private Image icon;
+    private static final Pokemon unknown = new Pokemon(0, "???");
 
     public Pokemon(int id, String name) {
         this.id = id;
@@ -35,5 +36,9 @@ public class Pokemon {
 
     public void setIcon(Image icon) {
         this.icon = icon;
+    }
+
+    public static Pokemon getUnknown() {
+        return unknown;
     }
 }

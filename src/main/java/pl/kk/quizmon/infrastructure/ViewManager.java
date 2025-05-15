@@ -1,4 +1,4 @@
-package pl.kk.quizmon.services;
+package pl.kk.quizmon.infrastructure;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
