@@ -94,27 +94,25 @@ public class PokedexController extends LifetimeController {
     @Subscribe
     public void onSearchFinished(SearchFinishedEvent event) {
         Pokemon result = event.getResult();
-        if (result == null) {
+        if (result == null || result == Pokemon.getUnknown()) {
             pokemonViewerController.setData(Pokemon.getUnknown());
-            pokemonSelectorController.setData(Pokemon.getUnknown());
             return;
         }
 
-        pokemonViewerController.setData(event.getResult());
-        pokemonSelectorController.setData(event.getResult());
+        pokemonViewerController.setData(result);
+        pokemonSelectorController.setData(result);
     }
 
     @Subscribe
     public void onFetchPokemonData(FetchPokemonDataEvent event) {
         Pokemon result = event.getResult();
-        if (result == null) {
+        if (result == null || result == Pokemon.getUnknown()) {
             pokemonViewerController.setData(Pokemon.getUnknown());
-            pokemonSelectorController.setData(Pokemon.getUnknown());
             return;
         }
 
-        pokemonViewerController.setData(event.getResult());
-        pokemonSelectorController.setData(event.getResult());
+        pokemonViewerController.setData(result);
+        pokemonSelectorController.setData(result);
     }
 
     @Subscribe
