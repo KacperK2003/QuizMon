@@ -19,7 +19,6 @@ public class SearchBarController {
     @FXML
     protected void onSearchClicked() {
         String searchString = searchField.getText();
-        // Event o starcie szukania. Pokedex view nasłuchuje i włącza np. ładowanie.
 
         Task<Void> apiTask = new Task<>() {
             @Override

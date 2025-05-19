@@ -1,17 +1,12 @@
 .search-bar {
-    -fx-background-color: #2c2c2c;
+    -fx-background-color: #454545;
     -fx-text-fill: white;
-    -fx-font-size: 16px;
+    -fx-font-size: 24px;
     -fx-padding: 8px 12px;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
-    -fx-border-color: #5c5c5c;
-    -fx-border-width: 2;
-}
-
-.search-bar:focused {
-    -fx-border-color: #00bcd4;
-    -fx-background-color: #3a3a3a;
+    -fx-border-color: black;
+    -fx-border-width: 5;
 }
 
 .search-bar .text {

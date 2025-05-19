@@ -10,10 +10,10 @@
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.kk.quizmon.controllers.components.PokedexListElementController"
+      fx:controller="pl.kk.quizmon.controllers.components.PokemonSelectorElementController"
       prefHeight="150.0" prefWidth="150.0"
       styleClass="root"
-      stylesheets="@../../styles/components/pokedex-list-element.css" >
+      stylesheets="@../../styles/components/pokemon-selector-element.css" >
     <ImageView fx:id="pokemonIcon" fitWidth="125" fitHeight="125" preserveRatio="true"
                StackPane.alignment="TOP_CENTER"/>
     <Label fx:id="pokemonId" StackPane.alignment="BOTTOM_CENTER"/>

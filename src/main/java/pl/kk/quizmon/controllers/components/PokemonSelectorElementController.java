@@ -6,19 +6,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import pl.kk.quizmon.models.Pokemon;
 
-public class PokemonViewerController {
+public class PokemonSelectorElementController {
+    private Pokemon pokemon;
     @FXML
-    private ImageView pokemonSprite;
+    private ImageView pokemonIcon;
     @FXML
     private Label pokemonId;
-    @FXML
-    private Label pokemonName;
 
     public void setData(Pokemon pokemon) {
         Platform.runLater(() -> {
-            pokemonSprite.setImage(pokemon.getSprite());
-            pokemonId.setText("ID: " + pokemon.getId());
-            pokemonName.setText(pokemon.getName().toUpperCase());
+            this.pokemon = pokemon;
+            pokemonIcon.setImage(pokemon.getIcon());
+            pokemonId.setText(Integer.toString(pokemon.getId()));
         });
+    }
+
+    public Pokemon getData() {
+        return pokemon;
     }
 }

@@ -8,6 +8,7 @@ public class Pokemon {
     private Image sprite;
     private Image icon;
     private static final Pokemon unknown = new Pokemon(0, "???");
+    private static final int maxId = 898;
 
     public Pokemon(int id, String name) {
         this.id = id;
@@ -40,5 +41,8 @@ public class Pokemon {
 
     public static Pokemon getUnknown() {
         return unknown;
+    }
+    public static int getMaxId() {
+        return maxId;
     }
 }

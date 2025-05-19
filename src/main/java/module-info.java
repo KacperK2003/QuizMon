@@ -12,5 +12,9 @@ module pl.kk.quizmon {
     opens pl.kk.quizmon to javafx.fxml;
     exports pl.kk.quizmon;
     exports pl.kk.quizmon.controllers;
+    exports pl.kk.quizmon.events;
+    exports pl.kk.quizmon.models;
+    exports pl.kk.quizmon.infrastructure;
+    exports pl.kk.quizmon.services;
     opens pl.kk.quizmon.controllers to javafx.fxml;
 }
