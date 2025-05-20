@@ -9,7 +9,9 @@
       xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="pl.kk.quizmon.controllers.PokedexController"
       stylesheets="@../styles/base.css, @../styles/pokedex.css">
-    <HBox fx:id="mainHBox" spacing="100"/>
+    <HBox fx:id="mainHBox" spacing="100">
+        <Button text="★" maxWidth="30" maxHeight="30" onAction="#onFavouriteClick"/>
+    </HBox>
     <Button maxWidth="-Infinity" mnemonicParsing="false" text="Powrót" onAction="#onBackButtonClick"/>
 </VBox>
 

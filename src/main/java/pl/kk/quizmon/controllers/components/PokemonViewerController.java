@@ -14,11 +14,18 @@ public class PokemonViewerController {
     @FXML
     private Label pokemonName;
 
+    private Pokemon currentPokemon;
+
     public void setData(Pokemon pokemon) {
+        currentPokemon = pokemon;
         Platform.runLater(() -> {
             pokemonSprite.setImage(pokemon.getSprite());
             pokemonId.setText("ID: " + pokemon.getId());
             pokemonName.setText(pokemon.getName().toUpperCase());
         });
+    }
+
+    public Pokemon getCurrentPokemon() {
+        return currentPokemon;
     }
 }

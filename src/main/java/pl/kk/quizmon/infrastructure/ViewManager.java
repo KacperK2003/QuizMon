@@ -26,7 +26,8 @@ public final class ViewManager {
     public enum View {
         MainMenu("views/mainmenu-view.fxml"),
         Pokedex("views/pokedex-view.fxml"),
-        About("views/about-view.fxml");
+        About("views/about-view.fxml"),
+        Favourite("views/favourite-view.fxml");
 
         private final String fileName;
         View(String fileName) {

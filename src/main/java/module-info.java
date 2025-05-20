@@ -8,6 +8,7 @@ module pl.kk.quizmon {
     requires java.desktop;
     requires com.google.gson;
     requires com.google.common;
+    requires java.sql;
 
     opens pl.kk.quizmon to javafx.fxml;
     exports pl.kk.quizmon;

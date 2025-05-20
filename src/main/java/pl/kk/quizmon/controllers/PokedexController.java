@@ -16,6 +16,7 @@ import pl.kk.quizmon.events.SelectorMovedEvent;
 import pl.kk.quizmon.infrastructure.EventBusProvider;
 import pl.kk.quizmon.models.Pokemon;
 import pl.kk.quizmon.infrastructure.ViewManager;
+import pl.kk.quizmon.services.DatabaseService;
 import pl.kk.quizmon.services.PokeApiService;
 
 import java.io.IOException;
@@ -89,6 +90,20 @@ public class PokedexController extends LifetimeController {
     @FXML
     protected void onBackButtonClick() {
         ViewManager.getInstance().switchView(ViewManager.View.MainMenu);
+    }
+
+    @FXML
+    protected void onFavouriteClick() {
+        Pokemon pokemon = pokemonViewerController.getCurrentPokemon();
+
+        Task<Void> databaseTask = new Task<>() {
+            @Override
+            protected Void call() {
+                DatabaseService.getInstance().addPokemon(pokemon);
+                return null;
+            }
+        };
+        new Thread(databaseTask).start();
     }
 
     @Subscribe

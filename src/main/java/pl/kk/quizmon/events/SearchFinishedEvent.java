@@ -3,7 +3,7 @@ package pl.kk.quizmon.events;
 import pl.kk.quizmon.models.Pokemon;
 
 public class SearchFinishedEvent {
-    Pokemon result;
+    final Pokemon result;
 
     public SearchFinishedEvent(Pokemon result) {
         this.result = result;

@@ -14,4 +14,9 @@ public class MainMenuController {
     protected void onAboutButtonClick() {
         ViewManager.getInstance().switchView(ViewManager.View.About);
     }
+
+    @FXML
+    protected void onFavouriteButtonClick() {
+        ViewManager.getInstance().switchView(ViewManager.View.Favourite);
+    }
 }
