@@ -31,8 +31,8 @@ public class PokedexController extends LifetimeController {
     @FXML
     private HBox mainHBox;
 
-    PokemonViewerController pokemonViewerController;
-    PokemonSelectorController pokemonSelectorController;
+    private PokemonViewerController pokemonViewerController;
+    private PokemonSelectorController pokemonSelectorController;
 
     @FXML
     public void initialize() {

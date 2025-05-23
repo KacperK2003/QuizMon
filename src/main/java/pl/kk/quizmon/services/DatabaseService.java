@@ -35,9 +35,7 @@ public class DatabaseService {
     private void initializeDatabase() {
         String sql = "CREATE TABLE IF NOT EXISTS pokemon (" +
                 "id INTEGER PRIMARY KEY, " +
-                "name TEXT NOT NULL, " +
-                "sprite BLOB, " +
-                "icon BLOB" +
+                "name TEXT NOT NULL" +
                 ");";
 
         try (Connection conn = connect()) {
@@ -53,7 +51,7 @@ public class DatabaseService {
     }
 
     public void addPokemon(Pokemon pokemon) {
-        String sql = "INSERT OR REPLACE INTO pokemon (id, name, sprite, icon) VALUES (?, ?, ?, ?);";
+        String sql = "INSERT OR REPLACE INTO pokemon (id, name) VALUES (?, ?);";
 
         if (pokemon == Pokemon.getUnknown())
             return;
@@ -66,8 +64,6 @@ public class DatabaseService {
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setInt(1, dao.getId());
             preparedStatement.setString(2, dao.getName());
-            preparedStatement.setBytes(3, dao.getSprite());
-            preparedStatement.setBytes(4, dao.getIcon());
 
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -91,10 +87,8 @@ public class DatabaseService {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                byte[] sprite = rs.getBytes("sprite");
-                byte[] icon = rs.getBytes("icon");
 
-                PokemonDAO dao = new PokemonDAO(id, name, sprite, icon);
+                PokemonDAO dao = new PokemonDAO(id, name);
                 pokemonArrayList.add(dao.getPokemon());
             }
 
@@ -106,5 +100,22 @@ public class DatabaseService {
         }
 
         return pokemonArrayList;
+    }
+
+    public void removeFromDatabase(Pokemon pokemon) {
+        String sql = "DELETE FROM pokemon WHERE id = ?;";
+
+        try (Connection conn = connect()) {
+            if (conn == null)
+                return;
+
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, pokemon.getId());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            Logger.getGlobal().severe(e.getMessage());
+            Logger.getGlobal().severe(e.getSQLState());
+        }
     }
 }

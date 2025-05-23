@@ -32,8 +32,8 @@ public class PokeApiService {
         PokemonApiResponse apiResponse = gson.fromJson(jsonData, PokemonApiResponse.class);
 
         Pokemon pokemon = new Pokemon(apiResponse.id(), apiResponse.name());
-        pokemon.setSprite(downloadImageData(urlSpriteName + pokemon.getId() + ".png"));
-        pokemon.setIcon(downloadImageData(urlIconName + pokemon.getId() + ".png"));
+        pokemon.setSprite(downloadSpriteFromId(pokemon.getId()));
+        pokemon.setIcon(downloadIconFromId(pokemon.getId()));
 
         return pokemon;
     }
@@ -73,5 +73,13 @@ public class PokeApiService {
         }
 
         return image;
+    }
+
+    public Image downloadSpriteFromId(int id) {
+        return downloadImageData(urlSpriteName + id + ".png");
+    }
+
+    public Image downloadIconFromId(int id) {
+        return downloadImageData(urlIconName + id + ".png");
     }
 }
