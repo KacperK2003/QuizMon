@@ -6,7 +6,6 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="pl.kk.quizmon.controllers.components.FavouritePokemonViewerController"
             fx:id="mainHBox"
-            spacing="30"
-            stylesheets="@../../styles/components/favourite-pokemon-viewer.css">
+            spacing="30" alignment="CENTER">
     <Button text="Usuń z ulubionych" wrapText="true" onAction="#onRemoveFromFavouriteClick"/>
 </HBox>
