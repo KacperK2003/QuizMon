@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="720.0" prefWidth="1280.0"
+      fx:id="root"
+      styleClass="root"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.kk.quizmon.controllers.QuizController"
+      stylesheets="@../styles/base.css, @../styles/quiz.css"
+      spacing="30">
+    <Label fx:id="label" alignment="CENTER" text="Co to za Pokemon?"/>
+    <ImageView fx:id="pokemonImage" fitWidth="300" fitHeight="300" preserveRatio="true" />
+    <HBox spacing="50">
+        <Button fx:id="button1" text="Pokemon 1" onAction="#onAnswerClick" />
+        <Button fx:id="button2" text="Pokemon 2" onAction="#onAnswerClick" />
+        <Button fx:id="button3" text="Pokemon 3" onAction="#onAnswerClick" />
+    </HBox>
+    <Label fx:id="pointLabel" alignment="CENTER" text="0" />
+    <Button text="Powrót" onAction="#onBackButtonClick"/>
+</VBox>

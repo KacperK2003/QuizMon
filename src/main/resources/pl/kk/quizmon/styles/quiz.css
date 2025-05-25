@@ -1,0 +1,19 @@
+.label {
+    -fx-font-size: 40px;
+}
+
+.button {
+    -fx-font-size: 32px;
+    -fx-max-width: 450;
+    -fx-background-color: #454545;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+    -fx-border-color: black;
+    -fx-border-width: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #606060;
+}

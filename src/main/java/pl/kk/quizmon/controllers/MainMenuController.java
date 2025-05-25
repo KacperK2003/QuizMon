@@ -6,6 +6,10 @@ import pl.kk.quizmon.infrastructure.ViewManager;
 
 public class MainMenuController {
     @FXML
+    protected void onQuizButtonClick() {
+        ViewManager.getInstance().switchView(ViewManager.View.Quiz);
+    }
+    @FXML
     protected void onPokedexButtonClick() {
         ViewManager.getInstance().switchView(ViewManager.View.Pokedex);
     }

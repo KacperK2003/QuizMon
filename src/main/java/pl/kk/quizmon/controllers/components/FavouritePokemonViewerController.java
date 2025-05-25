@@ -40,7 +40,7 @@ public class FavouritePokemonViewerController {
     @FXML
     protected void onRemoveFromFavouriteClick() {
         FavouritePokemonViewerController sender = this;
-        Task<Void> databaseTask = new Task<Void>() {
+        Task<Void> databaseTask = new Task<>() {
             @Override
             protected Void call() {
                 DatabaseService.getInstance().removeFromDatabase(pokemonViewerController.getCurrentPokemon());

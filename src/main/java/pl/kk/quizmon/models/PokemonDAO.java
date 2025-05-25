@@ -1,11 +1,6 @@
 package pl.kk.quizmon.models;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.PixelFormat;
-import javafx.scene.image.PixelReader;
 import pl.kk.quizmon.services.PokeApiService;
-
-import java.io.ByteArrayInputStream;
 
 public class PokemonDAO {
     private final int id;

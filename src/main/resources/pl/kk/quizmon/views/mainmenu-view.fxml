@@ -15,7 +15,7 @@
          <Insets top="10" bottom="70" />
       </VBox.margin>
    </Label>
-   <Button mnemonicParsing="false" text="Quiz" />
+   <Button mnemonicParsing="false" text="Quiz" onAction="#onQuizButtonClick" />
    <Button mnemonicParsing="false" text="Pokedex" onAction="#onPokedexButtonClick" />
    <Button mnemonicParsing="false" text="Ulubione" onAction="#onFavouriteButtonClick" />
    <Button mnemonicParsing="false" text="O programie" onAction="#onAboutButtonClick" />

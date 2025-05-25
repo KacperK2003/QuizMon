@@ -27,7 +27,8 @@ public final class ViewManager {
         MainMenu("views/mainmenu-view.fxml"),
         Pokedex("views/pokedex-view.fxml"),
         About("views/about-view.fxml"),
-        Favourite("views/favourite-view.fxml");
+        Favourite("views/favourite-view.fxml"),
+        Quiz("views/quiz-view.fxml");
 
         private final String fileName;
         View(String fileName) {
