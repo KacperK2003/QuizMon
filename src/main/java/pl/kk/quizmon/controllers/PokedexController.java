@@ -108,7 +108,7 @@ public class PokedexController extends LifetimeController {
 
     @Subscribe
     public void onSearchFinished(SearchFinishedEvent event) {
-        Pokemon result = event.getResult();
+        Pokemon result = event.result();
         if (result == null || result == Pokemon.getUnknown()) {
             pokemonViewerController.setData(Pokemon.getUnknown());
             return;
@@ -132,6 +132,6 @@ public class PokedexController extends LifetimeController {
 
     @Subscribe
     public void onSelectorMoved(SelectorMovedEvent event) {
-        pokemonViewerController.setData(event.getNewMiddlePokemon());
+        pokemonViewerController.setData(event.newMiddlePokemon());
     }
 }
