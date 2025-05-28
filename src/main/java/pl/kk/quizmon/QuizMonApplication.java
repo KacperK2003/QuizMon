@@ -41,7 +41,7 @@ public class QuizMonApplication extends Application {
     private Configuration prepareConfig() {
         Configurations configurations = new Configurations();
         try {
-            return configurations.properties("pl/kk/quizmon/config.properties");
+            return configurations.properties(getClass().getResource("config.properties"));
         } catch (ConfigurationException e) {
             Logger.getGlobal().severe(e.getMessage());
             return null;
