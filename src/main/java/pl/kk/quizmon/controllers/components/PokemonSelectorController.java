@@ -167,10 +167,10 @@ public class PokemonSelectorController {
 
     @Subscribe
     public void onSelectorMoved(SelectorMovedEvent event) {
-        if (!event.getMovedUp()) {
-            controllerDown.setData(event.getNewPokemon());
+        if (!event.movedUp()) {
+            controllerDown.setData(event.newPokemon());
             return;
         }
-        controllerUp.setData(event.getNewPokemon());
+        controllerUp.setData(event.newPokemon());
     }
 }

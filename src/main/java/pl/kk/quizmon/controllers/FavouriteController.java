@@ -38,7 +38,7 @@ public class FavouriteController extends LifetimeController {
     public void onLoad() {
         super.onLoad();
 
-        Task<Void> databaseTask = new Task<Void>() {
+        Task<Void> databaseTask = new Task<>() {
             @Override
             protected Void call() {
                 List<Pokemon> favouriteList = DatabaseService.getInstance().getPokemonList();
@@ -65,7 +65,7 @@ public class FavouriteController extends LifetimeController {
 
     @Subscribe
     public void onFavouriteListGet(FavouriteListGetEvent event) {
-        List<Pokemon> favouriteList = event.getList();
+        List<Pokemon> favouriteList = event.list();
         if (favouriteList == null || favouriteList.isEmpty())
             return;
 
@@ -90,7 +90,7 @@ public class FavouriteController extends LifetimeController {
     @Subscribe
     public void onPokemonRemovedEvent(PokemonRemovedEvent event) {
         Platform.runLater(() -> {
-            FavouritePokemonViewerController controller = event.getSender();
+            FavouritePokemonViewerController controller = event.sender();
             int index = viewersControllers.indexOf(controller);
 
             if (index == -1)
