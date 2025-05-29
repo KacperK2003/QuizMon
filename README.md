@@ -53,7 +53,7 @@ Ma on charakter wyłącznie edukacyjny i nie jest przeznaczony do komercyjnego w
 
 Kod źródłowy: objęty licencją MIT License
 
-Czcionki: używana czcionka objęta jest licencją SIL Open Font License
+Czcionki: używana czcionka Audiowide objęta jest licencją SIL Open Font License
 
 Zależności zewnętrzne:
 
