@@ -54,7 +54,7 @@ This project is strictly educational and not intended for commercial use.
 
 Source code: Licensed under the MIT License
 
-Fonts: Uses a font licensed under the SIL Open Font License
+Fonts: Uses Audiowide font licensed under the SIL Open Font License
 
 External dependencies:
 
