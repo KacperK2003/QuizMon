@@ -5,6 +5,7 @@ module pl.kk.quizmon {
     requires org.controlsfx.controls;
     requires java.logging;
     requires org.apache.commons.configuration2;
+    requires org.apache.commons.beanutils;
     requires java.desktop;
     requires com.google.gson;
     requires com.google.common;
