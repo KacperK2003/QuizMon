@@ -44,7 +44,7 @@ Ma on charakter wyłącznie edukacyjny i nie jest przeznaczony do komercyjnego w
    git clone https://github.com/KacperK2003/QuizMon.git
    cd QuizMon
    ```
-3. Uruchom projekt wykorzystując dołączoną konfigurację do InteliJ z komendą:
+3. Uruchom projekt wykorzystując dołączoną konfigurację do IntelliJ z komendą:
    ```bash
    mvn compile exec:java
    ```
@@ -53,7 +53,7 @@ Ma on charakter wyłącznie edukacyjny i nie jest przeznaczony do komercyjnego w
 
 Kod źródłowy: objęty licencją MIT License
 
-Czcionki: używana czcionka Audiowide objęta jest licencją SIL Open Font License
+Czcionki: używana czcionka Audiowide objęta jest licencją SIL Open Font License ([Zobacz plik OFL.txt](src/main/resources/pl/kk/quizmon/fonts/Audiowide/OFL.txt))
 
 Zależności zewnętrzne:
 
