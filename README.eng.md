@@ -54,15 +54,17 @@ This project is strictly educational and not intended for commercial use.
 
 Source code: Licensed under the MIT License
 
-Fonts: Uses Audiowide font licensed under the SIL Open Font License
+Fonts: Uses Audiowide font licensed under the SIL Open Font License ([See the OFL.txt file](src/main/resources/pl/kk/quizmon/fonts/Audiowide/OFL.txt))
 
 External dependencies:
 
-    JavaFX (GPL + Classpath Exception)
-
-    SQLite JDBC Driver (Apache 2.0)
-
-    Other open-source libraries listed in pom.xml, each under their respective licenses
+| Library | License |
+|------------|----------|
+| JavaFX (OpenJFX) | [GPL v2 + Classpath Exception](https://openjdk.org/legal/gplv2+ce.html) |
+| ControlsFX | [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause) |
+| JUnit 5 | [EPL 2.0](https://www.eclipse.org/legal/epl-2.0/) / [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| Apache Commons | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| Gson / Guava / SQLite JDBC | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 Legal Notice
 
