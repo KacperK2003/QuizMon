@@ -1,6 +1,6 @@
 # QuizMon
 
-> 🇵🇱 Wersja polska | 🇬🇧 [See the English version](README.eng.md)
+> 🇵🇱 Wersja polska | 🇬🇧 [See the English version](README.md)
 
 ## Autor
 - Kacper Kozłowski ([@KacperK2003](https://github.com/KacperK2003))
