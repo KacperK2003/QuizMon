@@ -1,8 +1,8 @@
-# 🎮 QuizMon
+# QuizMon
 
 >  🇬🇧 English version | [Zobacz polska wersję](README.md)
 
-## 👥 Author
+## Author
 - Kacper Kozłowski ([@KacperK2003](https://github.com/KacperK2003))
 
 ## Project Description
@@ -16,14 +16,14 @@
 It uses the public [PokeAPI](https://pokeapi.co/)  
 This project is strictly educational and not intended for commercial use.
 
-## 🧩 Features
+## Features
 
-- 🔍 Pokémon recognition quiz
-- 📖 Pokédex with search functionality
-- ⭐ Favorite Pokémon list system
-- 🗃️ Local SQLite database for storing data
+- Pokémon recognition quiz
+- Pokédex with search functionality
+- Favorite Pokémon list system
+- Local SQLite database for storing data
 
-## 🛠️ Technologies
+## Technologies
 
 - **Programming Language:** Java  
 - **Framework:** JavaFX  
@@ -32,7 +32,7 @@ This project is strictly educational and not intended for commercial use.
 - **JDK:** Oracle JDK 24  
 - **IDE:** JetBrains IntelliJ IDEA 2025  
 
-## 🚀 Running the Project
+## Running the Project
 
 1. Make sure you have installed:
    - Java JDK 24  
