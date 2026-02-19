@@ -41,8 +41,8 @@ This project is strictly educational and not intended for commercial use.
 
 2. Clone the repository:
    ```bash
-   git clone https://github.com/KacperK2003/QuizMon.git
-   cd QuizMon
+   git clone https://github.com/KacperK2003/quizmon.git
+   cd quizmon
    ```
 
 3. Run the project using the provided IntelliJ configuration with the command:
