@@ -161,8 +161,8 @@ public class PokemonSelectorController {
 
     @Subscribe
     public void onUpAndDownPokemonFetched(FetchUpAndDownPokemonDataEvent event) {
-        controllerUp.setData(event.getUp());
-        controllerDown.setData(event.getDown());
+        controllerUp.setData(event.up());
+        controllerDown.setData(event.down());
     }
 
     @Subscribe
