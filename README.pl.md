@@ -41,8 +41,8 @@ Ma on charakter wyłącznie edukacyjny i nie jest przeznaczony do komercyjnego w
 
 2. Sklonuj repozytorium:
    ```bash
-   git clone https://github.com/KacperK2003/QuizMon.git
-   cd QuizMon
+   git clone https://github.com/KacperK2003/quizmon.git
+   cd quizmon
    ```
 3. Uruchom projekt wykorzystując dołączoną konfigurację do IntelliJ z komendą:
    ```bash
