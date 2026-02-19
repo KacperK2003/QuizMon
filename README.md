@@ -1,63 +1,64 @@
-# 🎮 QuizMon
+# QuizMon
 
-> 🇵🇱 Wersja polska | 🇬🇧 [See the English version](README.eng.md)
+>  🇬🇧 English version | 🇵🇱 [Zobacz polska wersję](README.pl.md)
 
-## 👥 Autor
+## Author
 - Kacper Kozłowski ([@KacperK2003](https://github.com/KacperK2003))
 
-## Opis projektu
+## Project Description
 
-**QuizMon** to aplikacja stworzona jako zaliczenie przedmiotu *Event-Driven Programming* na Wojskowej Akademii Technicznej. Projekt umożliwia:
+**QuizMon** is an application developed as a final project for the *Event-Driven Programming* course at the Military University of Technology (WAT) in Poland. The project allows users to:
 
-- rozwiązywanie quizów w stylu „Co to za Pokémon?”,
-- przeglądanie pokedexu,
-- dodawanie Pokémonów do listy ulubionych.
+- solve “Who's that Pokémon?” style quizzes,
+- browse a Pokédex,
+- add Pokémon to a favorites list.
 
-Projekt korzysta z publicznego API: [PokeAPI](https://pokeapi.co/)  
-Ma on charakter wyłącznie edukacyjny i nie jest przeznaczony do komercyjnego wykorzystania.
+It uses the public [PokeAPI](https://pokeapi.co/)  
+This project is strictly educational and not intended for commercial use.
 
-## 🧩 Funkcjonalności
+## Features
 
-- 🔍 Quiz z rozpoznawaniem Pokémonów
-- 📖 Pokedex z wyszukiwarką
-- ⭐ System ulubionych Pokémonów
-- 🗃️ Lokalna baza danych SQLite do przechowywania danych
+- Pokémon recognition quiz
+- Pokédex with search functionality
+- Favorite Pokémon list system
+- Local SQLite database for storing data
 
-## 🛠️ Technologie
+## Technologies
 
-- **Język programowania:** Java
-- **Framework:** JavaFX
-- **Baza danych:** SQLite
-- **Zarządzanie zależnościami:** Maven
-- **JDK:** Oracle JDK 24
-- **IDE:** JetBrains IntelliJ IDEA 2025
+- **Programming Language:** Java  
+- **Framework:** JavaFX  
+- **Database:** SQLite  
+- **Dependency Management:** Maven  
+- **JDK:** Oracle JDK 24  
+- **IDE:** JetBrains IntelliJ IDEA 2025  
 
-## 🚀 Uruchomienie projektu
+## Running the Project
 
-1. Upewnij się, że masz zainstalowane:
-   - Java JDK 24
-   - Maven
-   - IntelliJ IDEA
+1. Make sure you have installed:
+   - Java JDK 24  
+   - Maven  
+   - IntelliJ IDEA  
 
-2. Sklonuj repozytorium:
+2. Clone the repository:
    ```bash
    git clone https://github.com/KacperK2003/QuizMon.git
    cd QuizMon
    ```
-3. Uruchom projekt wykorzystując dołączoną konfigurację do IntelliJ z komendą:
+
+3. Run the project using the provided IntelliJ configuration with the command:
    ```bash
    mvn compile exec:java
    ```
 
-## Licencje
+## Licenses
 
-Kod źródłowy: objęty licencją MIT License
+Source code: Licensed under the MIT License
 
-Czcionki: używana czcionka Audiowide objęta jest licencją SIL Open Font License ([Zobacz plik OFL.txt](src/main/resources/pl/kk/quizmon/fonts/Audiowide/OFL.txt))
+Fonts: Uses Audiowide font licensed under the SIL Open Font License ([See the OFL.txt file](src/main/resources/pl/kk/quizmon/fonts/Audiowide/OFL.txt))
 
-Zależności zewnętrzne:
+External dependencies:
 
-| Biblioteka | Licencja |
+| Library | License |
 |------------|----------|
 | JavaFX (OpenJFX) | [GPL v2 + Classpath Exception](https://openjdk.org/legal/gplv2+ce.html) |
 | ControlsFX | [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause) |
@@ -65,8 +66,8 @@ Zależności zewnętrzne:
 | Apache Commons | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | Gson / Guava / SQLite JDBC | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
-Informacje prawne
+Legal Notice
 
-    Pokémon to zastrzeżony znak towarowy należący do Nintendo, Game Freak i The Pokémon Company.
+    Pokémon is a registered trademark of Nintendo, Game Freak, and The Pokémon Company.
 
-    Ten projekt ma charakter wyłącznie edukacyjny i nie jest powiązany, sponsorowany ani zatwierdzony przez wyżej wymienione podmioty.
+    This project is for educational purposes only and is not affiliated with, sponsored by, or endorsed by the aforementioned entities.
