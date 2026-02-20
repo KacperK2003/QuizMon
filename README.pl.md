@@ -51,7 +51,7 @@ Ma on charakter wyłącznie edukacyjny i nie jest przeznaczony do komercyjnego w
 
 ## Licencje
 
-Kod źródłowy: objęty licencją MIT License
+Kod źródłowy: Objęty licencją MIT License
 
 Czcionki: używana czcionka Audiowide objęta jest licencją SIL Open Font License ([Zobacz plik OFL.txt](src/main/resources/pl/kk/quizmon/fonts/Audiowide/OFL.txt))
 
